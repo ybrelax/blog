@@ -1,0 +1,77 @@
+{
+  "name": "personal-blog",
+  "version": "1.0.0-alpha.34",
+  "description": "Vuepress theme - Meteorlxy",
+  "author": "meteorlxy <meteor.lxy@foxmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "keywords": [
+    "vuepress",
+    "theme"
+  ],
+  "scripts": {
+    "start": "vuepress dev docs",
+    "build": "vuepress build docs --dest docs-dist",
+    "lint": "eslint --fix --ext .js,.vue .",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1 && git add CHANGELOG.md"
+  },
+  "homepage": "https://github.com/meteorlxy/vuepress-theme-meteorlxy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meteorlxy/vuepress-theme-meteorlxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/meteorlxy/vuepress-theme-meteorlxy/issues"
+  },
+  "husky": {
+    "hooks": {}
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@vssue/api-github-v3": "^1.0.0",
+    "@vssue/vuepress-plugin-vssue": "^1.0.0",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.0.0",
+    "@vuepress/plugin-back-to-top": "^1.3.0",
+    "@vuepress/plugin-google-analytics": "^1.3.0",
+    "@vuepress/shared-utils": "^1.3.0",
+    "date-fns": "^1.30.1",
+    "geopattern": "^1.2.3",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
+    "markdown-it-center-text": "^1.0.4",
+    "vuepress-plugin-container": "^2.1.2",
+    "vuepress-plugin-nprogress": "^1.1.6",
+    "vuepress-plugin-redirect": "^1.2.3",
+    "vuepress-plugin-serve": "^2.0.0",
+    "vuepress-plugin-smooth-scroll": "^0.0.9",
+    "vuepress-plugin-table-of-contents": "^1.1.5",
+    "vuepress-plugin-zooming": "^1.1.7"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "conventional-changelog-cli": "^2.0.21",
+    "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.1.2",
+    "husky": "^3.0.5",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^9.2.5",
+    "sort-package-json": "^1.22.1",
+    "vuepress": "^1.3.0"
+  },
+  "peerDependencies": {
+    "vuepress": "^1.3.0"
+  }
+}
