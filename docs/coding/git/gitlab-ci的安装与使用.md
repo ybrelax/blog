@@ -1,5 +1,5 @@
 ---
-category: 编程
+category: 运维
 tags:
   - gitlab
   - git

@@ -1,7 +1,7 @@
 ---
 category: 编程
 tags:
-  - App
+  - app
   - react
 date: 2019-07-11
 title: HOC 高阶组件

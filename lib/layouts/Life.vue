@@ -21,7 +21,7 @@ export default {
   },
 
   created () {
-    this.posts = this.$books
+    this.posts = this.$life
   },
 }
 </script>

@@ -1,8 +1,7 @@
 ---
-category: node笔记
+category: 后端
 tags:
   - node
-
 date: 2019-05-10
 title: node建立服务
 

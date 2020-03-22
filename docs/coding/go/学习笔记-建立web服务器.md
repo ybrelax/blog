@@ -1,7 +1,6 @@
 ---
-category: 编程
+category: 后端
 tags:
-  - 后端
   - go
 date: 2019-05-14
 title: 通过go建立web服务器

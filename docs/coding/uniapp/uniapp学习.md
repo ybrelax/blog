@@ -1,7 +1,6 @@
 ---
-category: 编程
+category: 前端
 tags:
-  - 前端
   - uniapp
 date: 2019-12-08
 title: uniapp介绍篇

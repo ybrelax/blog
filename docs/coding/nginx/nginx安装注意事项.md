@@ -1,7 +1,6 @@
 ---
 category: 编程
 tags:
-  - 编程
   - nginx
 date: 2019-05-11
 title: nginx安装注意事项

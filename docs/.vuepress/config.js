@@ -78,7 +78,7 @@ module.exports = {
     nav: [
       { text: '主页', link: '/', exact: true },
       { text: '代码', link: '/coding/', exact: false },
-      { text: '生活', link: '/books/', exact: false },
+      { text: '生活', link: '/life/', exact: false },
       { text: '文档', link: '/custom-pages/', exact: false },
       { text: 'Github', link: 'https://github.com/ybrelax' },
     ],
@@ -88,7 +88,7 @@ module.exports = {
       repo: 'blog',
       clientId: '670283a1e3e0c7668bbb',
       clientSecret: '7bf05e11d716c504d07db3db49443fe4cc3870c1',
-      autoCreateIssue: true,
+      autoCreateIssue: false,
     },
   },
 }

@@ -1,7 +1,7 @@
 ---
-category: 编程
+category: 后端
 tags:
-  - 软件安装
+  - node
 date: 2020-02-08
 title: linux 安装node
 ---

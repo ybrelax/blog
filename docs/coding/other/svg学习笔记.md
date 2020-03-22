@@ -1,7 +1,5 @@
 ---
-category: 编程
-tags:
-  - 前端
+category: 前端
 date: 2019-04-29
 title: svg学习笔记
 ---

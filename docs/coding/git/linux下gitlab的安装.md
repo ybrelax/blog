@@ -1,7 +1,6 @@
 ---
-category: 编程
+category: 运维
 tags:
-  - App
   - git
 date: 2019-11-05
 title: linux下gitlab的安装
