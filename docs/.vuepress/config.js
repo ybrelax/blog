@@ -50,7 +50,7 @@ module.exports = {
     // lang: require(path.resolve(__dirname, '../../lib/langs/pt-BR')),
 
     personalInfo: {
-      nickname: 'yaobo',
+      nickname: 'ybrelax',
       description: 'Happy in life',
       email: 'shihuaidetiankong@gmail.com',
       location: 'shenZhen City, China',
@@ -84,10 +84,10 @@ module.exports = {
     ],
 
     comments: {
-      owner: 'yaoboGit',
-      repo: 'personal-blog',
-      clientId: '7357947354fffeff8ad9',
-      clientSecret: '3b3f47378eab91ab367c449eca7d049f0c2a9ee0',
+      owner: 'ybrelax',
+      repo: 'blog',
+      clientId: '670283a1e3e0c7668bbb',
+      clientSecret: '7bf05e11d716c504d07db3db49443fe4cc3870c1',
       autoCreateIssue: true,
     },
   },
