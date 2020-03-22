@@ -18,8 +18,8 @@ jobs:
 
     steps:
     - run: node -v
-    - run: npm i
     - run: git pull
+    - run: npm i
     - run: npm run build
       env:
         CI: true
