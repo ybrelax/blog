@@ -17,7 +17,7 @@ jobs:
  
 
     steps:
-    - run: node -v
+    - run: pwd
     - run: git pull
     - run: npm i
     - run: npm run build
