@@ -21,5 +21,6 @@ jobs:
     - run: git pull
     - run: npm i
     - run: npm run build
+    - run: mv /docs-dist /usr/local/project
       env:
         CI: true
