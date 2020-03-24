@@ -1,8 +1,4 @@
----
-category: 前端
-date: 2019-04-29
-title: svg学习笔记
----
+15515515000
  svg 是一种基于xml语法的图像格式，全称是可缩放矢量图（Scalable Vector Graphics)。
 
 <!-- more -->
