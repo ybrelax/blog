@@ -3,11 +3,11 @@ category: 编程
 tags:
   - typescirpt
 date: 2020-03-30
-title: ts 常见问题分析
+title: typescript学习（一）
 ---
 
 
-## Typescript 常见问题分析
+## Typescript 学习（一）
 
 ### module => namespace
 
@@ -314,9 +314,84 @@ class Teacher extend Student {
         return 'Student' + word;
     }
 }
-
 ```
-### 错误信息：can only be default-imported using the 'esModuleInterop' flag"
-错误原因：需要在 tsconfig.json 文件中添加 "esModuleInterop": true,;
-解释：Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'.
-参考文档：https://www.typescriptlang.org/v2/docs/handbook/release-notes/typescript-2-7.html
+### 泛型
+* 泛型是在定义函数、接口或类的时候，不预定指定具体的类型，使用的时候再去指定类型的一种特性
+* 可以把泛型理解成类型的参数
+
+
+```ts
+// 使用any就等于始于类型检测的意义
+function createObj(name: any, sex: any): Array<any> {
+    return [name, sex]
+}
+
+// 这种就是不能通用，不同函数得不同定义  可以使用函数重载
+function createObj1(name: string, sex: string): Array<string> {
+    return [name, sex]
+}
+
+// 泛型指定
+function createObj2<T>(name: T, sex: T): Array<T> {
+    return [name, sex]
+}
+const result = createObj2<string>('ybrelax', '1')
+```
+
+### 类型谓词
+
+* 类型保护函数： 要自定义一个类型保护，只需要为这个类型保护定义一个函数即可，这个函数的返回值是一个类型谓词。
+* 类型谓词： 语法为 **parameterName is Type** 这种形式，其中**parameterName**必须为当前函数签名里的一个参数名。
+
+```ts
+ // 类型谓词
+interface Bird {
+    fly()
+    layEggs()
+}
+interface Fish {
+    swim()
+    layEggs()
+}
+
+function getSmallPet():Fish | Bird{
+    return ;
+}
+let pet = getSmallPet();
+
+pet.layEggs();
+// 当使用联合类型时，如果不用类型断言，默认只会从中获取共有的部分
+(pet as Fish).swim();
+// pet.swim();
+
+// 使用类型谓词 
+function isFish(pet:Fish | Bird):pet is Fish {
+    return (pet as Fish).swim !== undefined;
+}
+
+if(isFish(pet)){
+    pet.swim();
+}else{
+    pet.fly();
+}
+```
+
+### 可选链运算符的使用
+
+* 可选链运算是一种先检查属性是否存在， 再尝试放回该属性的运算符，其符号为**?.**
+* 如果运算符左侧操作数**?.**,计算为undefine或null,则表达式为undefined.否则触发目标属性
+
+```ts
+a?.b;
+// 相当于 a == null ? undefined : a.b;
+// 如果 a 是 null/undefined，那么返回 undefined，否则返回 a.b 的值.
+
+a?.[x];
+// 相当于 a == null ? undefined : a[x];
+// 如果 a 是 null/undefined，那么返回 undefined，否则返回 a[x] 的值
+
+a?.b();
+// 相当于a == null ? undefined : a.b();
+// 如果 a 是 null/undefined，那么返回 undefined
+// 如果 a.b 不是函数的话，会抛类型错误异常，否则计算 a.b() 的结果
+```
