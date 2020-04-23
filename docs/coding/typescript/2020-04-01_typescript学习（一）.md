@@ -395,3 +395,19 @@ a?.b();
 // 如果 a 是 null/undefined，那么返回 undefined
 // 如果 a.b 不是函数的话，会抛类型错误异常，否则计算 a.b() 的结果
 ```
+
+### 空值合并运算符的使用
+* ||  或操作运算符的缺点在余 当左边的值为 0 或者 "" 是判断为否
+* ?? ts中空值合并运算符可以解决这个缺点，只有当左边的值为 null, undefined, false 才判断为否
+```ts
+const data = {
+  str: '',
+  str1: 0,
+  flag: false
+}
+
+let str = data.str || '牛逼';
+let str1 = data.str1 ?? '牛啊';
+console.log(str, str1, data.flag ?? '好人卡');
+```
+
