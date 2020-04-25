@@ -426,3 +426,50 @@ function handValue(val: All) {
 ```
 如果之后给 All 增加一个类型 Bax, 那么就会出现编译错误，default branch就无法赋值给 exhaust【穷尽】
 [https://www.zhihu.com/question/354601204/answer/888551021](https://www.zhihu.com/question/354601204/answer/888551021)
+
+### 当使用联合类型时，在类型未确定的情况下，默认只会从中获取共有的部分
+
+还是使用上面一个例子
+```ts
+interface Foo {
+  type: "foo";
+  foo1();
+}
+
+interface Bar {
+  type: "bar";
+  bar1();
+  bar2();
+}
+
+type All = Foo | Bar;
+
+// 使用联合类型的时候， 在类型未确定的情况下，默认值会仓重获取公有的部分
+function getType():All {
+    return
+}
+
+let type = getType();
+// 使用工共部分
+type.type
+
+// 需要使用类型断言
+(type as Bar).bar1();
+
+function handValue(val: All) {
+  switch (val.type) {
+    case "foo":
+      // 这里 val 被收窄为 Foo
+      break;
+    case "bar":
+      // val 在这里是 Bar
+      break;
+    default:
+      // val 在这里是 never
+      const exhaustiveCheck: never = val;
+      return ((e: never) => {
+          return new Error(e);
+      })
+      break;
+  }
+}
