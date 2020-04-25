@@ -3,7 +3,7 @@ category: 编程
 tags:
   - typescirpt
 date: 2020-03-30
-title: typescript学习（一）
+title: typescript错误分析
 ---
 
 ## Typescript 常见问题分析

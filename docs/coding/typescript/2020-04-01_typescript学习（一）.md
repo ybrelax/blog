@@ -395,3 +395,34 @@ a?.b();
 // 如果 a 是 null/undefined，那么返回 undefined
 // 如果 a.b 不是函数的话，会抛类型错误异常，否则计算 a.b() 的结果
 ```
+
+### TS 中的 never 类型具体有什么用？
+```ts
+interface Foo {
+  type: "foo";
+}
+
+interface Bar {
+  type: "bar";
+}
+
+type All = Foo | Bar;
+
+function handValue(val: All) {
+  switch (val.type) {
+    case "foo":
+      // 这里 val 被收窄为 Foo
+      break;
+    case "bar":
+      // val 在这里是 Bar
+      break;
+    default:
+      // val 在这里是 never
+      const exhaustiveCheck: never = val;
+      break;
+  }
+}
+
+```
+如果之后给 All 增加一个类型 Bax, 那么就会出现编译错误，default branch就无法赋值给 exhaust【穷尽】
+[https://www.zhihu.com/question/354601204/answer/888551021](https://www.zhihu.com/question/354601204/answer/888551021)
