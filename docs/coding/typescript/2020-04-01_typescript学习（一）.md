@@ -473,3 +473,20 @@ function handValue(val: All) {
       break;
   }
 }
+```
+
+### 扩展全局变量
+
+```ts
+interface String {
+    xxx(): void
+}
+
+interface Window {
+    name:string
+}
+
+// 不可以在当前文件中使用 export()
+// 如果加了export就变成了局部变量，而不是全局变量
+//export()
+```
