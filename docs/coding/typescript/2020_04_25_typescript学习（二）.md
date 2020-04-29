@@ -54,4 +54,20 @@ namespace All {
 let c = new All.a()
 ```
 
+### export = xxx 和 import xxx = require('xxx')
+
+* 在CommonJs和AMD的环境中，两者是不能兼容存在的。
+* typescript 中，可以通过下列写法来达到兼容操作
+```ts
+export = function () {
+  console.log('xxx')
+}
+
+
+//b.ts 
+import fn = require('./a.ts')
+fn()
+```
+
+
 
