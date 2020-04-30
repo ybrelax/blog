@@ -68,6 +68,15 @@ export = function () {
 import fn = require('./a.ts')
 fn()
 ```
-
-
+### 对Js文件进行类型检测
+* 在tsconfig.json中可以设置 **checkJs:true**, 对.js文件进行类型检测
+1. 可以在**.js**文件顶部添加 // @ts-nocheck , 忽略检测
+2. // @ts-ignore 可以忽略本行错误
+```ts
+/**
+ * @type {string | boolean}
+ */
+var sb;
+```
+* ts对js的类型判断可以参考 [https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html#supported-jsdoc](https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html#supported-jsdoc)
 
