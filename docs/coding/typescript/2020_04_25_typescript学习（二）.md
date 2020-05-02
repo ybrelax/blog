@@ -80,3 +80,29 @@ var sb;
 ```
 * ts对js的类型判断可以参考 [https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html#supported-jsdoc](https://www.typescriptlang.org/docs/handbook/type-checking-javascript-files.html#supported-jsdoc)
 
+### 不要使用如下类型的Number，String, Boolean, Object, 应该使用类型 number、string、boolean、object
+```ts
+/** 错误 **/
+function reverse(s:String): String
+
+/** OK */
+function reverse(s:stirng): string
+```
+
+### Pick 摘取返回的接口是一个对象， 里面包含摘取的属性
+
+```ts
+interface Test {
+    arr: string[]
+}
+
+let aaa: Pick<Test, 'arr'> = {arr: ['1']}
+```
+
+###  无法使用 for of 遍历 map 数据
+
+```ts
+const map = new Map([
+  ['F', 'no']
+])
+```
