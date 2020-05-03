@@ -99,10 +99,16 @@ interface Test {
 let aaa: Pick<Test, 'arr'> = {arr: ['1']}
 ```
 
-###  无法使用 for of 遍历 map 数据
+###  有时候我们需要复用一个类型，但是又不需要此类型内部的全部属性，所以需要剔除某些属性
 
 ```ts
-const map = new Map([
-  ['F', 'no']
-])
+interface User {
+    username: string;
+    id: number;
+    token: string;
+    avatar: string;
+    role: string;
+}
+
+type UserWithOutToken = Omit<User, 'token'>
 ```
